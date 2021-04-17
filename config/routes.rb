@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   delete "restaurants/:id",      to: "restaurants#destroy"
 
   # resources :restaurants
+    # resources :restaurants, only: [:create, :index, :destroy]
+
 end

@@ -23,8 +23,16 @@ class RestaurantsController < ApplicationController
 
   def update
     @restaurant = Restaurant.find(params[:id])
-    @restaurant.update(restaurant_params])
+    @restaurant.update(restaurant_params)
     # Will raise ActiveModel::ForbiddenAttributesError
+  end
+
+  def destroy
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.destroy
+
+    # no need for app/views/restaurants/destroy.html.erb
+    redirect_to restaurants_path
   end
 
   private
